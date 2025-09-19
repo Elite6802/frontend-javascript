@@ -1,12 +1,14 @@
-/// <reference path="./subjects/Teacher.ts" />
-/// <reference path="./subjects/Subject.ts" />
-/// <reference path="./subjects/Cpp.ts" />
-/// <reference path="./subjects/Java.ts" />
-/// <reference path="./subjects/React.ts" />
+import { Cpp } from './subjects/Cpp';
+import { Java } from './subjects/Java';
+import { React } from './subjects/React';
+import { Teacher } from './subjects/Teacher';
+
 
 // The merged Teacher interface with all optional experience properties
 namespace Subjects {
   export interface Teacher {
+    firstName: string;
+    lastName: string;
     experienceTeachingC?: number;
     experienceTeachingReact?: number;
     experienceTeachingJava?: number;
@@ -14,16 +16,16 @@ namespace Subjects {
 }
 
 // Create and export a constant for the Cpp subject
-export const cpp = new Subjects.Cpp();
+export const cpp = new Cpp();
 
 // Create and export a constant for the Java subject
-export const java = new Subjects.Java();
+export const java = new Java();
 
 // Create and export a constant for the React subject
-export const react = new Subjects.React();
+export const react = new React();
 
 // Create and export a Teacher object with C++ experience
-export const cTeacher: Subjects.Teacher = {
+export const cTeacher: Teacher = {
   firstName: 'Guillaume',
   lastName: 'Salva',
   experienceTeachingC: 10,
